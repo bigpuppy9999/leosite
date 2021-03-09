@@ -1,4 +1,5 @@
 {% extends "mysite/base.html" %}
+{% load markdown_extras %}
 {% load static %}
 {% block content %}
   <!-- ======= Intro Section ======= -->
@@ -89,11 +90,11 @@
                   <div class="about-me pt-4 pt-md-0">
                     <div class="title-box-2">
                       <h5 class="title-left">
-                        {{ project.title }}
+                        {{ project.title }} : {{ project.created }}
                       </h5>
                     </div>
                     <p class="lead">
-                      {{ project.description }}
+                      {{ project.description | markdown | safe }}
                     </p>
                   </div>
                 </div>

@@ -4,6 +4,6 @@ from .models import Project
 def index(request):
 	projects = Project.objects.all()
 	ctx = {
-		"projects": projects
+		"projects": projects,
 	}
 	return render(request, "mysite/index.html", ctx)
